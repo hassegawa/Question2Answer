@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: I3DE9k*un!i0C*67Bdy
+      MYSQL_USER: question-user
+      MYSQL_PASSWORD: QuestionAnswer42
+      MYSQL_DATABASE: question-db
+    volumes:
+      - mysql_data:/var/lib/mysql 
+
+  question2answer:
+    image: hassegawa/question2answer:1.8.6 
+    restart: always
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USERNAME: question-user
+      MYSQL_PASSWORD: QuestionAnswer42
+      MYSQL_DB_NAME: question-db
+    volumes: 
+      - qa_blob_data:/usr/src/qa_blobs_directory  
+    ports:
+      - 8080:80     
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8181:8080    
+ 
