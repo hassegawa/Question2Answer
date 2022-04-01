@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: QuestionAnswer42
       MYSQL_DATABASE: question-db
     volumes:
-      - mysql_data:/var/lib/mysql 
+      - /home/marcio/mysql_data:/var/lib/mysql 
 
   question2answer:
     image: hassegawa/question2answer:1.8.6 
@@ -24,7 +24,7 @@ services:
       MYSQL_PASSWORD: QuestionAnswer42
       MYSQL_DB_NAME: question-db
     volumes: 
-      - qa_blob_data:/usr/src/qa_blobs_directory  
+      - /home/marcio/qa_blob_data:/usr/src/qa_blobs_directory  
     ports:
       - 8080:80     
 
