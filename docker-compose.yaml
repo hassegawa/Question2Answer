@@ -16,7 +16,7 @@ services:
       - /home/marcio/mysql_data:/var/lib/mysql 
 
   question2answer:
-    image: hassegawa/question2answer:1.8.6 
+    image: hassegawa/question2answer
     restart: always
     environment:
       MYSQL_HOST: db
