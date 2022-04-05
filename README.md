@@ -11,6 +11,7 @@
       * database name, username and password
       * volumes:
         * path to database files and blob files
+      * listener ports
 
   ### Start docker compose 
     * docker-compose up -d
