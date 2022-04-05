@@ -6,7 +6,10 @@
 
 ---
 ## docker-compose
-  ### config
+  [repository](https://github.com/hassegawa/Question2Answer)
+
+  
+  ### config [docker-compose.yaml](https://raw.githubusercontent.com/hassegawa/Question2Answer/main/docker-compose.yaml)
     * configure 
       * database name, username and password
       * volumes:
@@ -17,7 +20,7 @@
     * docker-compose up -d
 
   ### http://localhost
-
+---
   ### adminer, database magager	
     * http://localhost:8181
 
