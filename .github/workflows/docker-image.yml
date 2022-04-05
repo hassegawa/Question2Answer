@@ -7,7 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       tags:
-        description: 'build tags'
+        description: 'Build tags'
+        required: false 
+        type: boolean
 
 jobs:
   push_to_registry:
@@ -50,6 +52,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}      
           build-args:
             VERSION=${{ github.event.inputs.tags }}
-          
-          
-          
+
