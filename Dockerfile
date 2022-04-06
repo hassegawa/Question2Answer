@@ -18,7 +18,7 @@ ENV	MYSQL_DB_NAME "question-db"
 RUN apt update && apt install -y curl unzip
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-ARG VERSION
+ARG VERSION=1.8.6
 
 RUN cd /usr/src \
     && curl -LO https://github.com/q2a/question2answer/releases/download/v${VERSION}/question2answer-${VERSION}.zip \
