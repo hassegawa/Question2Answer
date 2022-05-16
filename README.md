@@ -31,3 +31,6 @@
 
   ### RUN com banco de dados separado
     * docker run -d -p 80:80 -e MYSQL_HOST=mysql_container -e MYSQL_USERNAME=DATABASE_USERNAME -e MYSQL_PASSWORD=DATABASE_PASSWORD -e MYSQL_DB_NAME=DATABASE_NAME hassegawa/question2answer	
+    
+    
+    [![Foo](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/hassegawa)
