@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - /home/marcio/mysql_data:/var/lib/mysql 
+
+  question2answer:
+    image: hassegawa/question2answer
+    restart: always
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USERNAME: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DB_NAME: ${MYSQL_DATABASE}
+    volumes: 
+      - /home/marcio/qa_blob_data:/usr/src/qa_blobs_directory  
+    ports:
+      - 80:80     
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8181:8080    
+ 
